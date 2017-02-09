@@ -96,8 +96,7 @@
 				TargetAttributes = {
 					D0F612431E49E6AD004743B2 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = F3SB85GAN9;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -259,7 +258,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = F3SB85GAN9;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SquirrelsEye/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.SquirrelsEye;
@@ -272,7 +271,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = F3SB85GAN9;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SquirrelsEye/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.SquirrelsEye;
