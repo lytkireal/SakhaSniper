@@ -27,7 +27,13 @@ class ViewController: UIViewController {
     targetValue = 1 + Int(arc4random_uniform(100))
     round += 1
   }
-    
+  
+  func startNewGame() {
+    self.score = 0
+    self.round = 0
+    self.startNewRound()
+  }
+  
   func updateLabels() {
         
     targetLabel.text = String(targetValue)
@@ -41,7 +47,7 @@ class ViewController: UIViewController {
     Do any additional setup after loading the view, typically from a nib.
     */
     super.viewDidLoad()
-    self.startNewRound()
+    self.startNewGame()
     self.updateLabels()
   }
 
@@ -92,6 +98,11 @@ class ViewController: UIViewController {
     
   @IBAction func sliderMoved(_ slider:UISlider){
     currentValue = lroundf(slider.value) //round-off slider's value to integer
+  }
+  
+  @IBAction func startOver() {
+    startNewGame()
+    updateLabels()
   }
 
 
