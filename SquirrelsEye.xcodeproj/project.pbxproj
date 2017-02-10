@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D0813D611E4DB7DC00D9C2FB /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0813D601E4DB7DC00D9C2FB /* AboutViewController.swift */; };
 		D0F612481E49E6AE004743B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F612471E49E6AE004743B2 /* AppDelegate.swift */; };
 		D0F6124A1E49E6AE004743B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F612491E49E6AE004743B2 /* ViewController.swift */; };
 		D0F6124D1E49E6AE004743B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0F6124B1E49E6AE004743B2 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D0813D601E4DB7DC00D9C2FB /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		D0F612441E49E6AE004743B2 /* SquirrelsEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SquirrelsEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0F612471E49E6AE004743B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0F612491E49E6AE004743B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				D0F612471E49E6AE004743B2 /* AppDelegate.swift */,
 				D0F612491E49E6AE004743B2 /* ViewController.swift */,
 				D0F6124B1E49E6AE004743B2 /* Main.storyboard */,
+				D0813D601E4DB7DC00D9C2FB /* AboutViewController.swift */,
 				D0F6124E1E49E6AE004743B2 /* Assets.xcassets */,
 				D0F612501E49E6AE004743B2 /* LaunchScreen.storyboard */,
 				D0F612531E49E6AE004743B2 /* Info.plist */,
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0813D611E4DB7DC00D9C2FB /* AboutViewController.swift in Sources */,
 				D0F6124A1E49E6AE004743B2 /* ViewController.swift in Sources */,
 				D0F612481E49E6AE004743B2 /* AppDelegate.swift in Sources */,
 			);
@@ -299,6 +303,7 @@
 				D0F612581E49E6AE004743B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
