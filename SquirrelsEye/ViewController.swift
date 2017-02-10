@@ -10,27 +10,29 @@ import UIKit
 
 class ViewController: UIViewController {
     
-  var currentValue: Int = 50
-    
-  var targetValue: Int = 0
-    
+  var currentValue = 50
+  var targetValue = 0
+  var score = 0
+  var round = 0
 
     
     
   @IBOutlet weak var slider: UISlider!
   @IBOutlet weak var targetLabel: UILabel!
-    
+  @IBOutlet weak var scoreLabel: UILabel!
+  @IBOutlet weak var roundLabel: UILabel!
+  
   func startNewRound() {
     // set up a new round
-        
-    //currentValue = 50
     targetValue = 1 + Int(arc4random_uniform(100))
-    //slider.value = Float(currentValue)
+    round += 1
   }
     
   func updateLabels() {
         
     targetLabel.text = String(targetValue)
+    scoreLabel.text = String(score)
+    roundLabel.text = String(round)
   }
     
   override func viewDidLoad() {
@@ -54,24 +56,38 @@ class ViewController: UIViewController {
     and they are performed from top to bottom
     */
     let difference = abs(currentValue - targetValue)
-    let message = "The value of the slider is: \(currentValue)" +
-                  "\nThe tartget value is: \(targetValue)" +
-                  "\nThe difference is: \(difference)"
-        
-    let _alert = UIAlertController(title: "Hello iOS!",
-                                   message: message,     //changed
+    var points = 100 - difference
+    // setting up our messages by points
+    let title: String
+    if difference == 0{
+      title = "Perfect!"+"\nYou've got 100 bonus points!"
+      points += 100
+    }else if difference < 5 {
+      title = "You almost had it!"+"\nYou've got 50 bonus points!"
+      if difference == 1 {
+      points += 50
+      }
+    }else if difference < 10 {
+      title = "Pretty good!"
+    }else {
+      title = "Not even close..."
+    }
+    score += points
+    let message = "you scored \(points) points"
+    let _alert = UIAlertController(title: title,
+                                   message: message,
                                    preferredStyle: .alert)
-        
-    let action = UIAlertAction(title: "OK",             //changed
+    let action = UIAlertAction(title: "OK",
                                style: .default,
-                               handler: nil)
+                               handler: {action in    // event handler
+                                self.startNewRound()
+                                self.updateLabels()
+                                })
         
     _alert.addAction(action)
         
     present(_alert, animated: true, completion: nil)
-        
-    self.startNewRound()
-    self.updateLabels()
+
     }
     
   @IBAction func sliderMoved(_ slider:UISlider){
