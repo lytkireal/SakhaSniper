@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 class ViewController: UIViewController {
     
@@ -31,6 +32,7 @@ class ViewController: UIViewController {
   func startNewGame() {
     self.score = 0
     self.round = 0
+    slider.value = 50
     self.startNewRound()
   }
   
@@ -49,6 +51,25 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     self.startNewGame()
     self.updateLabels()
+    // settings of slider(we can not setting up in storyboard)
+    let thumbImageNormal = #imageLiteral(resourceName: "SliderThumb-Normal")
+    slider.setThumbImage(thumbImageNormal, for: .normal)
+    
+    let thumbImageHighLighted = #imageLiteral(resourceName: "SliderThumb-Highlighted")
+    slider.setThumbImage(thumbImageHighLighted, for: .highlighted)
+    
+    let insets = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
+    
+    let trackLeftImage = #imageLiteral(resourceName: "SliderTrackLeft")
+    let trackLeftResizable =
+                        trackLeftImage.resizableImage(withCapInsets: insets)
+    slider.setMinimumTrackImage(trackLeftResizable, for: .normal)
+    
+    let trackRightImage = #imageLiteral(resourceName: "SliderTrackRight")
+    let trackRightResizable =
+                          trackRightImage.resizableImage(withCapInsets: insets)
+    slider.setMaximumTrackImage(trackRightResizable, for: .normal)
+    
   }
 
   override func didReceiveMemoryWarning() {
@@ -101,8 +122,17 @@ class ViewController: UIViewController {
   }
   
   @IBAction func startOver() {
+  //restart the game
+    
     startNewGame()
     updateLabels()
+    
+    let transition = CATransition()
+    transition.type = kCATransitionFade
+    transition.duration = 1
+    transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+    view.layer.add(transition, forKey: nil)
+    
   }
 
 
